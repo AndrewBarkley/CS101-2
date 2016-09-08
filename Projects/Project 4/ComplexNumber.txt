@@ -1,0 +1,59 @@
+  //Zachary Mosley 
+  //CS101-02
+  //Project 4
+  
+     ----jGRASP exec: java Calculator
+    First number should be: 4.5 + 7.2i
+    Your number is:         4.5 + 7.2i
+    
+    Second number should be: 0.0 + 0.0i
+    Your number is:          0.0 + 0.0i
+    
+    Third number should be: 17.7 + 0.0i
+    Your number is:         17.7 + 0.0i
+    
+    Fourth number should be: 4.5 + 7.2i
+    Your number is:          4.5 + 7.2i
+    
+    There are 4 complex numbers.  You have counted 4 of them.
+    
+    The real value should be: 17.7
+    Your real value is :      17.7
+    
+    The imaginary value should be: 7.2
+    Your imaginary value is :      7.2
+    
+    4.5 + 7.2i is not zero, your method should return false
+    Your method returns false
+    
+    0.0 + 0.0i is zero, your method should return true
+    Your method returns true
+    
+    
+    result of add: 5.2 + -3.1i + -1.4 + 5.1i = 3.8000000000000003 + 1.9999999999999996i
+    your add is:   5.2 + -3.1i + -1.4 + 5.1i = 3.8000000000000003 + 1.9999999999999996i
+    
+    
+    result of add: 19.2 + 4.71i + 2.4 + -1.1i = 21.599999999999998 + 3.61i
+    your add is:   19.2 + 4.71i + 2.4 + -1.1i = 21.599999999999998 + 3.61i
+    
+    
+    result of subtract: 5.2 + -3.1i - -1.4 + 5.1i = 6.6 + -8.2i
+    your subtract is:   5.2 + -3.1i - -1.4 + 5.1i = 6.6 + -8.2i
+    
+    
+    result of subtract: 19.2 + 4.71i - 2.4 + -1.1i = 16.8 + 5.8100000000000005i
+    your subtract is:   19.2 + 4.71i - 2.4 + -1.1i = 16.8 + 5.8100000000000005i
+    
+    
+    result of multiply: 12.7 + 3.71i * 5.4 + -4.1i = 83.791 + -32.03599999999999i
+    your multiply is:   12.7 + 3.71i * 5.4 + -4.1i = 83.791 + -32.03599999999999i
+    
+    Your result should be: 52.3 + -2.45i
+    Your result is :       52.3 + -2.45i
+    
+    Your result should be: 52.3 + -2.45i
+    Your result is :       52.3 + -2.45i
+    
+     ----jGRASP: operation complete.
+    

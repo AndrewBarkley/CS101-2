@@ -1,0 +1,16 @@
+Unified Modeling Language(UML) class Diagram
+
+Legend
++ public
+- private
+  package
+# protected
+
+----------------------------------------------------
+name
+----------------------------------------------------
+members of the class except constructors & methods
+instance variables, class variables, class constants
+----------------------------------------------------
+constructors & methods
+----------------------------------------------------
