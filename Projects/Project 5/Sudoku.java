@@ -9,6 +9,7 @@ public class Sudoku
    private int [][] values = new int [9][9];
    private boolean [][] editable = new boolean [9][9];
    private boolean full;
+   private int trueCount;
    
    //class methods
    
@@ -32,7 +33,14 @@ public class Sudoku
    public void addGuess(int row, int coloumn, int value)//kinda done
    {
       if(editable[row][coloumn])
-         values[row][coloumn] = value;
+      {
+         if(value>=1 && value<=9)
+            values[row][coloumn] = value;
+         else
+            System.out.println("ERROR 305: Guess value is unacceptable");
+      }
+      else
+         System.out.println("ERROR 507: Cell is not editable");
    }
    
    public int getValueIn(int row, int coloumn)//done
@@ -40,14 +48,83 @@ public class Sudoku
       return values[row][coloumn];
    }
    
-   public boolean getAllowedValues(int row, int coloumn)//edit
+   public boolean [] getAllowedValues(int row, int coloumn)//almost done
    {
-      return true;
+      boolean [] possible = new boolean [9];
+      trueCount = 0;
+      for(int i=0;i<9;i++)
+      {
+         possible[i] = true;
+         trueCount++;
+      }
+      
+      //row
+      for(int c=0;c<9;c++)//done
+      {
+         if(values[row][c]>0 && c!=coloumn)
+         {
+            if(possible[values[row][c]])
+            {
+               possible[values[row][c]-1] = false;
+               trueCount--;
+            }
+         }
+      }
+      
+      //coloumn
+      for(int r=0;r<9;r++)//done
+      {
+         if(values[r][coloumn]>0 && r!=row)
+         {
+            if(possible[values[r][coloumn]])
+            {
+               possible[values[r][coloumn]-1] = false;
+               trueCount--;
+            }
+         }
+      }
+      
+      //box
+      if(row>=0 && row<=2)//not done
+      {
+         if(coloumn>=0 && coloumn<=2)
+         {
+            
+         }
+      }
+      
+      return possible;
    }
    
-   public boolean checkPuzzle()//edit
+   public boolean checkPuzzle()//done but untested
    {
-      return true;
+      boolean [][] correct = new boolean [9][9];
+      for(int r=0;r<9;r++)
+      {
+         for(int c=0;c<9;c++)
+         {
+            getAllowedValues(r,c);
+            
+            if(trueCount == 1)
+            {
+               correct[r][c] = true;
+            }
+               
+         }
+      }
+      boolean allCorrect = true;
+      for(int r=0;r<9;r++)
+      {
+         for(int c=0;c<9;c++)
+         {
+            if(!correct[r][c])
+            {
+               allCorrect = false;
+            }
+               
+         }
+      }
+      return allCorrect;
    }
    
    public boolean isFull()//done
@@ -76,36 +153,26 @@ public class Sudoku
       }
    }
    
-   public String toString()//thank god it's kinda done
+   public String toString()//done
    {
-      return " "+values[0][0]+" "+values[0][1]+" "+values[0][2]+" |"+//line 0
-             " "+values[0][3]+" "+values[0][4]+" "+values[0][5]+" |"+
-             " "+values[0][6]+" "+values[0][7]+" "+values[0][8]+" \n"+  
-             " "+values[1][0]+" "+values[1][1]+" "+values[1][2]+" |"+//line 1
-             " "+values[1][3]+" "+values[1][4]+" "+values[1][5]+" |"+
-             " "+values[1][6]+" "+values[1][7]+" "+values[1][8]+" \n"+
-             " "+values[2][0]+" "+values[2][1]+" "+values[2][2]+" |"+//line 2
-             " "+values[2][3]+" "+values[2][4]+" "+values[2][5]+" |"+
-             " "+values[2][6]+" "+values[2][7]+" "+values[2][8]+" \n"+ 
-             "-------+-------+-------\n" + 
-             " "+values[3][0]+" "+values[3][1]+" "+values[3][2]+" |"+//line 3
-             " "+values[3][3]+" "+values[3][4]+" "+values[3][5]+" |"+
-             " "+values[3][6]+" "+values[3][7]+" "+values[3][8]+" \n"+  
-             " "+values[4][0]+" "+values[4][1]+" "+values[4][2]+" |"+//line 4
-             " "+values[4][3]+" "+values[4][4]+" "+values[4][5]+" |"+
-             " "+values[4][6]+" "+values[4][7]+" "+values[4][8]+" \n"+
-             " "+values[5][0]+" "+values[5][1]+" "+values[5][2]+" |"+//line 5
-             " "+values[5][3]+" "+values[5][4]+" "+values[5][5]+" |"+
-             " "+values[5][6]+" "+values[5][7]+" "+values[5][8]+" \n"+
-             "-------+-------+-------\n" +
-             " "+values[6][0]+" "+values[6][1]+" "+values[6][2]+" |"+//line 6
-             " "+values[6][3]+" "+values[6][4]+" "+values[6][5]+" |"+
-             " "+values[6][6]+" "+values[6][7]+" "+values[6][8]+" \n"+  
-             " "+values[7][0]+" "+values[7][1]+" "+values[7][2]+" |"+//line 7
-             " "+values[7][3]+" "+values[7][4]+" "+values[7][5]+" |"+
-             " "+values[7][6]+" "+values[7][7]+" "+values[7][8]+" \n"+
-             " "+values[8][0]+" "+values[8][1]+" "+values[8][2]+" |"+//line 8
-             " "+values[8][3]+" "+values[8][4]+" "+values[8][5]+" |"+
-             " "+values[8][6]+" "+values[8][7]+" "+values[8][8]+" \n";
+      String visual = "";
+      for(int r=0;r<9;r++)
+      {
+         for(int c=0;c<9;c++)
+         {
+            if(values[r][c] != 0)
+               visual += " " + values[r][c];
+            else
+               visual += " _";
+            
+            if(c==2 || c==5)
+               visual += " |";
+            if(c==8)
+               visual += " \n";
+         }
+         if(r==2 || r==5)
+            visual += "-------+-------+-------\n";
+      }  
+      return visual;
    }
 }
