@@ -24,20 +24,27 @@ public class Sudoku
       }
    }
    
-   public void addInitial(int row, int coloumn, int value)//kinda done
+   public void addInitial(int row, int coloumn, int value)//done
    {
-      values[row][coloumn] = value;
-      editable[row][coloumn] = false;
+      if(0<row && row<10 && 0<coloumn && coloumn<10 && 0<value && value<10)
+      {
+         values[row-1][coloumn-1] = value;
+         editable[row-1][coloumn-1] = false;
+      }
+      else
+         System.out.println("ERROR 323: One or more value(s) aren't within bounds");
    }
    
-   public void addGuess(int row, int coloumn, int value)//kinda done
+   public void addGuess(int row, int coloumn, int value)//done
    {
-      if(editable[row][coloumn])
+      if(editable[row-1][coloumn-1])
       {
-         if(value>=1 && value<=9)
-            values[row][coloumn] = value;
+         if(0<row && row<10 && 0<coloumn && coloumn<10 && 0<value && value<10)
+         {
+            values[row-1][coloumn-1] = value;
+         }
          else
-            System.out.println("ERROR 305: Guess value is unacceptable");
+            System.out.println("ERROR 323: One or more value(s) aren't within bounds");
       }
       else
          System.out.println("ERROR 507: Cell is not editable");
@@ -45,7 +52,12 @@ public class Sudoku
    
    public int getValueIn(int row, int coloumn)//done
    {
-      return values[row][coloumn];
+      if(0<row && row<10 && 0<coloumn && coloumn<10)
+      {
+         return values[row-1][coloumn-1];
+      }
+      else
+         return 323;
    }
    
    public boolean [] getAllowedValues(int row, int coloumn)//almost done
@@ -63,7 +75,7 @@ public class Sudoku
       {
          if(values[row][c]>0 && c!=coloumn)
          {
-            if(possible[values[row][c]])
+            if(possible[values[row][c]-1])
             {
                possible[values[row][c]-1] = false;
                trueCount--;
@@ -76,7 +88,7 @@ public class Sudoku
       {
          if(values[r][coloumn]>0 && r!=row)
          {
-            if(possible[values[r][coloumn]])
+            if(possible[values[r][coloumn]-1])
             {
                possible[values[r][coloumn]-1] = false;
                trueCount--;
@@ -85,13 +97,27 @@ public class Sudoku
       }
       
       //box
-      if(row>=0 && row<=2)//not done
+      if(row>=0 && row<=2)//Needs a better plan
       {
          if(coloumn>=0 && coloumn<=2)
          {
-            
+            for(int r=0;r<3;r++)//done
+            {
+               for(int c=0;c<3;c++)//done
+               {
+                  if(r!=row && c!=coloumn)
+                  {
+                     if(possible[values[row][c]-1])
+                     {
+                        possible[values[row][c]-1] = false;
+                        trueCount--;
+                     }
+                  }
+               }
+            }
          }
       }
+       
       
       return possible;
    }
@@ -129,19 +155,19 @@ public class Sudoku
    
    public boolean isFull()//done
    {
-      full = false;
+      full = true;
       for(int r=0;r<9;r++)
       {
          for(int c=0;c<9;c++)
          {
             if(values[r][c] != 0)
-               full = true;
+               full = false;
          }
       }
       return full;
    }
    
-   public void reset()//done
+   public void reset()//Unsure why, but doesnt work
    {
       for(int r=0;r<9;r++)
       {
