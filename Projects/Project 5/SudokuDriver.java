@@ -13,7 +13,6 @@ public class SudokuDriver
       play(s);
    }
       
-      
    public static void initialize(Sudoku s)
    {
       boolean setup = true;
@@ -50,7 +49,7 @@ public class SudokuDriver
          else
             System.out.println("ERROR 503: Unknown command");
             
-        System.out.println();
+         System.out.println();
       }
    }   
       
@@ -103,7 +102,7 @@ public class SudokuDriver
                                   "Ex. Row Coloumn ");
                row = in.nextInt();
                coloumn = in.nextInt();
-            
+               
                System.out.println(s.getAllowedValues(row,coloumn));
                break;
             case 4:

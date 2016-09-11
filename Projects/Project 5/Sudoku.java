@@ -60,8 +60,11 @@ public class Sudoku
          return 323;
    }
    
-   public boolean [] getAllowedValues(int row, int coloumn)//almost done
+   public String getAllowedValues(int row, int coloumn)//done...untested
    {
+      row--;
+      coloumn--;
+      
       boolean [] possible = new boolean [9];
       trueCount = 0;
       for(int i=0;i<9;i++)
@@ -75,9 +78,9 @@ public class Sudoku
       {
          if(values[row][c]>0 && c!=coloumn)
          {
-            if(possible[values[row][c]-1])
+            if(possible[values[row][c]])
             {
-               possible[values[row][c]-1] = false;
+               possible[values[row][c]] = false;
                trueCount--;
             }
          }
@@ -88,62 +91,92 @@ public class Sudoku
       {
          if(values[r][coloumn]>0 && r!=row)
          {
-            if(possible[values[r][coloumn]-1])
+            if(possible[values[r][coloumn]])
             {
-               possible[values[r][coloumn]-1] = false;
+               possible[values[r][coloumn]] = false;
                trueCount--;
             }
          }
       }
       
       //box
-      if(row>=0 && row<=2)//Needs a better plan
+      int box = getBox(row,coloumn);
+      int rowI;
+      int coloumnI;
+      switch(box)
       {
-         if(coloumn>=0 && coloumn<=2)
+         case 1:
+            rowI=0;
+            coloumnI=0; 
+            break;
+         case 2:
+            rowI=0;
+            coloumnI=3; 
+            break;
+         case 3:
+            rowI=0;
+            coloumnI=6; 
+            break;
+         case 4:
+            rowI=3;
+            coloumnI=0; 
+            break;
+         case 5:
+            rowI=3;
+            coloumnI=3;
+            break;
+         case 6:
+            rowI=3;
+            coloumnI=6;
+            break;
+         case 7:
+            rowI=6;
+            coloumnI=0;
+            break;
+         case 8:
+            rowI=6;
+            coloumnI=3;
+            break;
+         default:
+            rowI=6;
+            coloumnI=6;
+            break;
+      }
+      
+      for(int r=rowI;r<(rowI+3);r++)//done
+      {
+         for(int c=coloumnI;c<(coloumnI+3);c++)//done
          {
-            for(int r=0;r<3;r++)//done
+            if(r!=row && c!=coloumn)
             {
-               for(int c=0;c<3;c++)//done
+               if(possible[values[r][c]])
                {
-                  if(r!=row && c!=coloumn)
-                  {
-                     if(possible[values[row][c]-1])
-                     {
-                        possible[values[row][c]-1] = false;
-                        trueCount--;
-                     }
-                  }
+                  possible[values[r][c]] = false;
+                  trueCount--;
                }
             }
          }
       }
        
-      
-      return possible;
+      String output = "";
+      for(int i=0;i<9;i++)
+      {
+         output += possible[i];
+      }
+       
+      return output;
    }
    
-   public boolean checkPuzzle()//done but untested
+   public boolean checkPuzzle()//done...untested
    {
-      boolean [][] correct = new boolean [9][9];
+      boolean allCorrect = true;
       for(int r=0;r<9;r++)
       {
          for(int c=0;c<9;c++)
          {
             getAllowedValues(r,c);
             
-            if(trueCount == 1)
-            {
-               correct[r][c] = true;
-            }
-               
-         }
-      }
-      boolean allCorrect = true;
-      for(int r=0;r<9;r++)
-      {
-         for(int c=0;c<9;c++)
-         {
-            if(!correct[r][c])
+            if(trueCount != 1)
             {
                allCorrect = false;
             }
@@ -200,5 +233,56 @@ public class Sudoku
             visual += "-------+-------+-------\n";
       }  
       return visual;
+   }
+
+   public int getBox(int row, int coloumn)
+   {
+      int box = 0;
+      if(row>=0 && row<=2)
+      {
+         if(coloumn>=0 && coloumn<=2)
+         {
+            box = 1;
+         }
+         if(coloumn>=3 && coloumn<=5)
+         {
+            box = 2;
+         }
+         if(coloumn>=6 && coloumn<=8)
+         {
+            box = 3;
+         }
+      }
+      if(row>=3 && row<=5)
+      {
+         if(coloumn>=0 && coloumn<=2)
+         {
+            box = 4;
+         }
+         if(coloumn>=3 && coloumn<=5)
+         {
+            box = 5;
+         }
+         if(coloumn>=6 && coloumn<=8)
+         {
+            box = 6;
+         }
+      }
+      if(row>=6 && row<=8)
+      {
+         if(coloumn>=0 && coloumn<=2)
+         {
+            box = 6;
+         }
+         if(coloumn>=3 && coloumn<=5)
+         {
+            box = 7;
+         }
+         if(coloumn>=6 && coloumn<=8)
+         {
+            box = 8;
+         }
+      }
+      return box;
    }
 }
