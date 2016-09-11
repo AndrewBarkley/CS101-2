@@ -109,11 +109,18 @@ public class SudokuDriver
                System.out.println(s.isFull());
                break;
             case 5:
-               System.out.println(s.checkPuzzle());
-               System.out.println("Hooray :) You've won!!! Terminating game...");
-               run = false;
+               if(s.checkPuzzle())
+               {
+                  System.out.println("Hooray :) You've won!!! Terminating game...");
+                  run = false;
+               }
+               else
+               {
+                  System.out.println("Sorry but you're not quite there");
+               }
                break;
             case 6:
+               s.reset();
                System.out.println("Puzzle is reset");
                break;
             case 8008:

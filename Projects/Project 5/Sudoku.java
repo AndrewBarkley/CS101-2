@@ -60,7 +60,7 @@ public class Sudoku
          return 323;
    }
    
-   public String getAllowedValues(int row, int coloumn)//done...untested
+   public String getAllowedValues(int row, int coloumn)//done
    {
       row--;
       coloumn--;
@@ -78,9 +78,9 @@ public class Sudoku
       {
          if(values[row][c]>0 && c!=coloumn)
          {
-            if(possible[values[row][c]])
+            if(possible[values[row][c]-1])
             {
-               possible[values[row][c]] = false;
+               possible[values[row][c]-1] = false;
                trueCount--;
             }
          }
@@ -91,9 +91,9 @@ public class Sudoku
       {
          if(values[r][coloumn]>0 && r!=row)
          {
-            if(possible[values[r][coloumn]])
+            if(possible[values[r][coloumn]-1])
             {
-               possible[values[r][coloumn]] = false;
+               possible[values[r][coloumn]-1] = false;
                trueCount--;
             }
          }
@@ -147,43 +147,50 @@ public class Sudoku
       {
          for(int c=coloumnI;c<(coloumnI+3);c++)//done
          {
-            if(r!=row && c!=coloumn)
+            if(values[r][c]!=0)
             {
-               if(possible[values[r][c]])
+               if(r!=row && c!=coloumn)
                {
-                  possible[values[r][c]] = false;
-                  trueCount--;
+                  if(possible[values[r][c]-1])
+                  {
+                     possible[values[r][c]-1] = false;
+                     trueCount--;
+                  }
                }
             }
          }
       }
        
       String output = "";
-      for(int i=0;i<9;i++)
+      for(int i=1;i<=9;i++)
       {
-         output += possible[i];
+         output += (i) + "." + possible[i-1] + ", ";
       }
        
       return output;
    }
    
-   public boolean checkPuzzle()//done...untested
+   public boolean checkPuzzle()//done
    {
-      boolean allCorrect = true;
-      for(int r=0;r<9;r++)
-      {
-         for(int c=0;c<9;c++)
+      //if(isFull())
+      //{
+         boolean allCorrect = true;
+         for(int r=1;r<=9;r++)
          {
-            getAllowedValues(r,c);
-            
-            if(trueCount != 1)
+            for(int c=1;c<=9;c++)
             {
-               allCorrect = false;
-            }
+               getAllowedValues(r,c);
+            
+               if(trueCount != 1)
+               {
+                  allCorrect = false;
+               }
                
+            }
          }
-      }
-      return allCorrect;
+         return allCorrect;
+      //}
+      //return false;
    }
    
    public boolean isFull()//done
