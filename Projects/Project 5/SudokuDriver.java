@@ -62,7 +62,7 @@ public class SudokuDriver
    int row                       determines which row to changes
    int coloumn                   determines what coloumn to change
    int value                     determines what to change the cell to
-   String input                  
+   String input                  converts in to a string to be tested
 
    */   
    public static void initialize(Sudoku puzzle)
@@ -178,7 +178,6 @@ public class SudokuDriver
    int row                       determines which row to changes
    int coloumn                   determines what coloumn to change
    int value                     determines what to change the cell to
-   String input                  
 
    */       
    public static void play(Sudoku puzzle)

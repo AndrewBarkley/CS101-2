@@ -121,24 +121,7 @@ public class Sudoku
       else
          System.out.println("ERROR 507: Cell is not editable");
    }
-   
-   /*
-                     getValueIn Algorithm
-   -----------------------------------------------------------------------
-   if(0<row<10 && 0<coloumn<10)
-      return <- values[row-1][coloumn-1];
-   else
-      return <- 323;
-   -----------------------------------------------------------------------
 
-                     getValueIn Data Table
-   Variable or Constant          Purpose
-   ____________________          _________________________________________
-   int row                       determines which row to change
-   int coloumn                   determines what coloumn to change
-   values[][]                    array to keep track of Sudoku values
-
-   */
    public int getValueIn(int row, int coloumn)
    {
       if(0<row && row<10 && 0<coloumn && coloumn<10)
