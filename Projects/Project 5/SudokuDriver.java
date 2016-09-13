@@ -105,7 +105,7 @@ public class SudokuDriver
       }
    }   
    /*
-                     initialize Algorithm
+                     play Algorithm
    -----------------------------------------------------------------------
       boolean run <- true
       while(run)
@@ -119,14 +119,17 @@ public class SudokuDriver
          int value <- 0
          
          switch(input)
-            case 1:
+            case1:
+               print <- puzzle
+               break;
+            case 2:
                print <- instructions
                row <- in.nextInt()
                coloumn <- in.nextInt()
                value <- in.nextInt()
                puzzle.addGuess(row,coloumn,value)
                break
-            case 2:
+            case 3:
                print <- instructions
                row <- in.nextInt()
                coloumn <- in.nextInt()
@@ -136,23 +139,22 @@ public class SudokuDriver
                else
                   print <- puzzle.getValueIn(row,coloumn))
                break
-            case 3:
+            case 4:
                print <- instructions
                row <- in.nextInt()
                coloumn <- in.nextInt()
-               print <- puzzle.getAllowedValues(row,coloumn))
-               break
-            case 4:
-               print <- puzzle.isFull())
+               String output = "";
+               for(int i <- 1;i<=9;i++)
+                  output += (i) + "." + possible[i-1] + ", ";
+               System.out.println(output);
                break
             case 5:
-               if(puzzle.checkPuzzle())
-                  print <- "Hooray :) You've won!!! Terminating game..."
-                  run <- false
-               else
-                  print <- "Sorry but you're not quite there"
+               print <- puzzle.isFull())
                break
             case 6:
+               print <- "Sorry but you're not quite there"
+               break
+            case 7:
                puzzle.reset()
                print <- "Puzzle is reset"
                break
@@ -165,11 +167,14 @@ public class SudokuDriver
                break
          }
          print <- empty line
-         print <- puzzle
+         if(puzzle.checkPuzzle())
+            print <- "Hooray :) You've won!!! Terminating game..."
+            run <- false
+            print <- puzzle
       
    -----------------------------------------------------------------------
 
-                     initialize Data Table
+                     play Data Table
    Variable or Constant          Purpose
    ____________________          _________________________________________
    boolean run                   used in the while statement to keep initialize running
@@ -186,12 +191,13 @@ public class SudokuDriver
       while(run)
       {
          System.out.println("Type the number to doing the corresponding task:\n"+
-                            "1      addGuess\n"+
-                            "2      getValueIn\n"+
-                            "3      getAllowedValues aka cheat\n"+
-                            "4      isFull\n"+
-                            "5      checkPuzzle\n"+
-                            "6      reset\n"+
+                            "1      printPuzzle\n"+
+                            "2      addGuess\n"+
+                            "3      getValueIn\n"+
+                            "4      getAllowedValues aka cheat\n"+
+                            "5      isFull\n"+
+                            "6      checkPuzzle\n"+
+                            "7      reset\n"+
                             "8008   Quit");
                             
          Scanner in = new Scanner(System.in);
@@ -205,6 +211,9 @@ public class SudokuDriver
          switch(input)
          {
             case 1:
+               System.out.println(puzzle);
+               break;
+            case 2:
                System.out.println("type a set of three numbers to make your guess\n" +
                                   "Ex. Row Coloumn Value ");
                row = in.nextInt();
@@ -213,40 +222,40 @@ public class SudokuDriver
             
                puzzle.addGuess(row,coloumn,value);
                break;
-            case 2:
+            case 3:
                System.out.println("type a set of two numbers to choose a cell\n" +
                                   "Ex. Row Coloumn ");
                row = in.nextInt();
                coloumn = in.nextInt();
             
-               if(s.getValueIn(row,coloumn) == 323)
-                  System.out.println("ERROR 323: One or more value(s) aren't within bounds");
+               if(puzzle.getValueIn(row,coloumn) == 323)
+                  System.out.println("ERROR 323: One or more value(s) " +
+                                     "aren't within bounds");
                else
                   System.out.println(puzzle.getValueIn(row,coloumn));
                break;
-            case 3:
-               System.out.println("type a set of two numbers to choose a cell you cheater\n" +
+            case 4:
+               System.out.println("Type a set of two numbers to " +
+                                  "choose a cell you cheater\n" +
                                   "Ex. Row Coloumn ");
                row = in.nextInt();
                coloumn = in.nextInt();
+               boolean [] possible = puzzle.getAllowedValues(row,coloumn);
                
-               System.out.println(puzzle.getAllowedValues(row,coloumn));
-               break;
-            case 4:
-               System.out.println(puzzle.isFull());
+               String output = "";
+               for(int i=1;i<=9;i++)
+               {
+                  output += (i) + "." + possible[i-1] + ", ";
+               }
+               System.out.println(output);
                break;
             case 5:
-               if(puzzle.checkPuzzle())
-               {
-                  System.out.println("Hooray :) You've won!!! Terminating game...");
-                  run = false;
-               }
-               else
-               {
-                  System.out.println("Sorry but you're not quite there");
-               }
+               System.out.println(puzzle.isFull());
                break;
             case 6:
+               System.out.println("Sorry but you're not quite there");
+               break;
+            case 7:
                puzzle.reset();
                System.out.println("Puzzle is reset");
                break;
@@ -259,7 +268,12 @@ public class SudokuDriver
                break;
          }
          System.out.println();
-         System.out.println(puzzle);
+         if(puzzle.checkPuzzle())
+         {
+            System.out.println("Hooray :) You've won!!! Terminating game...");
+            run = false;
+            System.out.println(puzzle);
+         }
       }
    }
 }

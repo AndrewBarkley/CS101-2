@@ -109,11 +109,15 @@ public class Sudoku
    */
    public void addGuess(int row, int coloumn, int value)
    {
+      boolean [] possible = getAllowedValues(row,coloumn);
       if(editable[row-1][coloumn-1])
       {
          if(0<row && row<10 && 0<coloumn && coloumn<10 && 0<value && value<10)
          {
-            values[row-1][coloumn-1] = value;
+            if(possible[value-1])
+               values[row-1][coloumn-1] = value;
+            else
+               System.out.println("ERROR 707: New value conflicts with and another cell");
          }
          else
             System.out.println("ERROR 323: One or more value(s) aren't within bounds");
@@ -207,11 +211,7 @@ public class Sudoku
                      possible[values[r][c]-1] <- false
                      trueCount--
        
-      String output <- ""
-      for(int i <- 1;i<=9;i++)
-         output += (i) + "." + possible[i-1] + ", "
-       
-      return <- output
+      return <- possible
    -----------------------------------------------------------------------
 
                      getAllowedValues Data Table
@@ -228,7 +228,7 @@ public class Sudoku
    String output                 String verion of possible[][]
 
    */
-   public String getAllowedValues(int row, int coloumn)
+   public boolean [] getAllowedValues(int row, int coloumn)
    {
       row--;
       coloumn--;
@@ -329,13 +329,7 @@ public class Sudoku
          }
       }
        
-      String output = "";
-      for(int i=1;i<=9;i++)
-      {
-         output += (i) + "." + possible[i-1] + ", ";
-      }
-       
-      return output;
+      return possible;
    }
    
    /*
@@ -373,8 +367,7 @@ public class Sudoku
                if(trueCount != 1)
                {
                   allCorrect = false;
-               }
-               
+               } 
             }
          }
          return allCorrect;
@@ -478,7 +471,7 @@ public class Sudoku
             if(values[r][c] != 0)
                visual += " " + values[r][c];
             else
-               visual += " _";
+               visual += "  ";
             
             if(c==2 || c==5)
                visual += " |";
