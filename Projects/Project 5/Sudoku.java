@@ -333,7 +333,7 @@ public class Sudoku
    }
    
    /*
-                     checkPuzzle Algorithm
+                     checkCorrect Algorithm
    -----------------------------------------------------------------------
    if(isFull())
       boolean allCorrect = true
@@ -346,14 +346,14 @@ public class Sudoku
    return <- false
    -----------------------------------------------------------------------
 
-                     checkPuzzle Data Table
+                     checkCorrect Data Table
    Variable or Constant          Purpose
    ____________________          _________________________________________
-   boolean allCorrect            determines which row to changes
+   boolean allCorrect            True if puzzle is correct
    int trueCount                 counts the number of possible values for a cell
 
    */
-   public boolean checkPuzzle()
+   public boolean checkCorrect()
    {
       if(isFull())
       {
@@ -569,5 +569,45 @@ public class Sudoku
          }
       }
       return box;
+   }
+   
+   /*
+                     checkPuzzle Algorithm
+   -----------------------------------------------------------------------
+      boolean allCorrect = true
+      for(int r <- 0;r<9;r++)
+         for(int c <- 0;c<9;c++)
+            boolean [] possible = getAllowedValues(r+1,c+1)
+            if(values[r][c]!=0)
+               if(possible[values[r][c]-1] == false)
+                  allCorrect <- false
+      return <- allCorrect
+   -----------------------------------------------------------------------
+
+                     checkPuzzle Data Table
+   Variable or Constant          Purpose
+   ____________________          _________________________________________
+   boolean allCorrect            True if puzzle is accurate
+   possible[][]                  array to keep track of the cell's possible values
+
+   */
+   public boolean checkPuzzle()
+   {
+      boolean allCorrect = true;
+      for(int r=0;r<9;r++)
+      {
+         for(int c=0;c<9;c++)
+         {
+            boolean [] possible = getAllowedValues(r+1,c+1);
+            if(values[r][c]!=0)
+            {
+               if(!possible[values[r][c]-1])
+               {
+                  allCorrect = false;
+               }
+            }
+         }
+      }
+      return allCorrect;
    }
 }

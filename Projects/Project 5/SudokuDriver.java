@@ -152,7 +152,7 @@ public class SudokuDriver
                print <- puzzle.isFull())
                break
             case 6:
-               print <- "Sorry but you're not quite there"
+               print <- puzzle.checkPuzzle()
                break
             case 7:
                puzzle.reset()
@@ -167,7 +167,7 @@ public class SudokuDriver
                break
          }
          print <- empty line
-         if(puzzle.checkPuzzle())
+         if(puzzle.checkCorrect())
             print <- "Hooray :) You've won!!! Terminating game..."
             run <- false
             print <- puzzle
@@ -253,7 +253,7 @@ public class SudokuDriver
                System.out.println(puzzle.isFull());
                break;
             case 6:
-               System.out.println("Sorry but you're not quite there");
+               System.out.println(puzzle.checkPuzzle());
                break;
             case 7:
                puzzle.reset();
@@ -268,7 +268,7 @@ public class SudokuDriver
                break;
          }
          System.out.println();
-         if(puzzle.checkPuzzle())
+         if(puzzle.checkCorrect())
          {
             System.out.println("Hooray :) You've won!!! Terminating game...");
             run = false;
