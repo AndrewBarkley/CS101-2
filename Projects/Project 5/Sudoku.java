@@ -1,4 +1,6 @@
 //Zachary Mosley
+//CS101
+//Project 5
 
 import java.util.*;
 import java.io.*;
@@ -15,8 +17,8 @@ import java.io.*;
                      Class Data Table
    Variable or Constant          Purpose
    ____________________          _________________________________________
-   int [][] values               array to keep track of Sudoku values
-   boolean [][] editable         array to keep track of which values are editable
+   int [][] values               int array to keep track of Sudoku values
+   boolean [][] editable         boolean array to keep track of which values are editable
    boolean full                  keeps track if the puzzle is full
    int trueCount                 keeps track of th number of possible values for one cell
 
@@ -40,7 +42,7 @@ public class Sudoku
                      Sudoku constructor Data Table
    Variable or Constant          Purpose
    ____________________          _________________________________________
-   boolean [][] editable         array to keep track of which values are editable
+   boolean [][] editable         boolean array to keep track of which values are editable
 
    */
    public Sudoku()
@@ -57,7 +59,7 @@ public class Sudoku
    /*
                      addInitial Algorithm
    -----------------------------------------------------------------------
-   if(0<row<10 && 0<coloumn<10 && 0<value<10)
+   if(0<row<10 && 0<coloumn<10 && 0<=value<10)
       values[row-1][coloumn-1] <- value
       editable[row-1][coloumn-1] <- false
    else
@@ -70,16 +72,24 @@ public class Sudoku
    int row                       determines which row to changes
    int coloumn                   determines what coloumn to change
    int value                     determines what to change the cell to
-   values[][]                    array to keep track of Sudoku values
-   editable[][]                  array to keep track of which values are editable
-
+   values[][]                    int array to keep track of Sudoku values
+   editable[][]                  boolean array to keep track of which values are editable
+   possible[][]                  boolean array to keep track of which values are possible
+   
    */
    public void addInitial(int row, int coloumn, int value)
    {
-      if(0<row && row<10 && 0<coloumn && coloumn<10 && 0<value && value<10)
+      boolean [] possible = getAllowedValues(row,coloumn);
+      if(0<row && row<10 && 0<coloumn && coloumn<10 && 0<=value && value<10)
       {
-         values[row-1][coloumn-1] = value;
-         editable[row-1][coloumn-1] = false;
+         if(possible[value-1])
+         {
+            values[row-1][coloumn-1] = value;
+            editable[row-1][coloumn-1] = false;
+         }
+         else
+            System.out.println("ERROR 707: New value conflicts with and another cell");
+         
       }
       else
          System.out.println("ERROR 323: One or more value(s) aren't within bounds");
@@ -103,8 +113,9 @@ public class Sudoku
    int row                       determines which row to changes
    int coloumn                   determines what coloumn to change
    int value                     determines what to change the cell to
-   values[][]                    array to keep track of Sudoku values
-   editable[][]                  array to keep track of which values are editable
+   values[][]                    int array to keep track of Sudoku values
+   editable[][]                  boolean array to keep track of which values are editable
+   possible[][]                  boolean array to keep track of which values are possible
 
    */
    public void addGuess(int row, int coloumn, int value)
@@ -222,9 +233,9 @@ public class Sudoku
    int rowI                      the upper row of the cell's box
    int coloumnI                  the left most coloumn of the cell's box
    int trueCount                 counts the number of possible values for a cell
-   values[][]                    array to keep track of Sudoku values
+   values[][]                    int array to keep track of Sudoku values
    possible[][]                  array to keep track of the cell's possible values
-   editable[][]                  array to keep track of which values are editable
+   editable[][]                  boolean array to keep track of which values are editable
    String output                 String verion of possible[][]
 
    */
@@ -390,7 +401,7 @@ public class Sudoku
    Variable or Constant          Purpose
    ____________________          _________________________________________
    int full                      keeps tracks if the puzzle is full
-   values[][]                    array to keep track of Sudoku values
+   values[][]                    int array to keep track of Sudoku values
 
    */
    public boolean isFull()
@@ -419,8 +430,8 @@ public class Sudoku
                      reset Data Table
    Variable or Constant          Purpose
    ____________________          _________________________________________
-   values[][]                    array to keep track of Sudoku values
-   editable[][]                  array to keep track of which values are editable
+   values[][]                    int array to keep track of Sudoku values
+   editable[][]                  boolean array to keep track of which values are editable
 
    */
    public void reset()
@@ -457,7 +468,7 @@ public class Sudoku
                      toString Data Table
    Variable or Constant          Purpose
    ____________________          _________________________________________
-   values[][]                    array to keep track of Sudoku values
+   values[][]                    int array to keep track of Sudoku values
    String visual                 turns the values[][] into a String to print
 
    */
