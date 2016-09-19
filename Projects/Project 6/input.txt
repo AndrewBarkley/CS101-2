@@ -1,0 +1,24 @@
+u#Bobby Bob#1234 Sesame Street Flint, MI#(248)459-1140#mosl8748@kettering.edu#11/14/1997#f
+u#Rich Stone Stroboleski#52984 Holly Road Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
+
+u#Max Phro Vesel#314159 Pie Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#s
+u#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#r
+u#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#s
+
+g#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
+g#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
+g#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
+g#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
+g#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
+
+s#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
+s#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
+s#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
+s#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
+s#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
+
+f#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
+f#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
+f#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
+f#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
+f#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
