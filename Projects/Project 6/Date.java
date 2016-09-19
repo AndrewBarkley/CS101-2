@@ -2,6 +2,7 @@
 //CS101-02
 //Project 6
 
+
 public class Date
 {
    private int month;
@@ -16,6 +17,35 @@ public class Date
       this.year = year;
    }
    
+   /*
+                     compareTo Algorithm
+   -----------------------------------------------------------------------
+      if(year == date2.getYear())
+         if(month == date2.getMonth())
+            if(day == date2.getDay())
+               return 0
+            else if(day <= date2.getDay())
+               return 1
+            else
+               return -1
+         else if(month <= date2.getMonth())
+            return 1
+         else
+            return -1
+      else if(year <= date2.getYear())
+         return 1
+      else
+         return -1
+   -----------------------------------------------------------------------
+
+                     compareTo Data Table
+   Variable or Constant          Purpose
+   ____________________          _________________________________________
+   int month                     store the month
+   int day                       stores the day
+   int year                      stores the year
+  
+   */
    public int compareTo(Date date2)
    {
       if(year == date2.getYear())
@@ -57,6 +87,7 @@ public class Date
    
    public String toString()
    {
+      date = "";
       switch(month)
       {
          case 1:

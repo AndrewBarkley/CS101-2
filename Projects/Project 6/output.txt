@@ -1,0 +1,484 @@
+Zachary Mosley
+CS101-02
+Project 6
+
+The following is an echo of the input
+
+u#Bobby Bob#1234 Sesame Street Flint, MI#(248)459-1140#mosl8748@kettering.edu#11/14/1995#f
+u#Rich Stone Stroboleski#5298 Holly Road Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
+u#Max Phro Vesel#8341 Trollston Ave. Kalamazo, MI#(724)184-8357#masdic8@msu.com#03/21/1887#r
+u#Berry Applesome#3141 Pie Street Baked, PI#(314)159-2653#yummypie@pielover.pie#03/14/1592#f
+u#George A. Bejarano#4067 Candlelight Drive Alvin, TX 77511#(281)393-7753#GeorgeABejarano@teleworm.us#10/03/1947#s
+g#Vivian C. Lusk#2591 Fulton Street Smithville, WV 26178I#3/8/1937#(304)477-9395#VivianCLusk@rhyta.com#d#t
+g#Ellen B. Simmons#3891 Kenwood Place Tamarac, FL 33309#09/6/1963#(954)543-8950#EllenBSimmons@rhyta.com#m#r
+g#Kathleen S. Barton#8264 Blair Court Rockville, MO 64780#1/23/1961#(660)598-36150#KathleenSBarton@jourrapide.com#m#t
+g#Rients Breijer#3302 Melrose Street Spokane Valley, WA 99206#04/26/1988#(509)893-9410#RientsBreijer@jourrapide.com#d#r
+g#Fayme Champagne#1514 Blue Spruce Lane Baltimore, MD 21212#9/30/1974#(410)323-6884#FaymeChampagne@dayrep.comm#d#t
+s#Caradoc Banks#1072 Mount Street Saginaw, MI 48601#Songwriter#(989)533-0201#CaradocBanks@teleworm.us#120 Floor 1#86324.32#12/12/1975#Carol Brown
+s#Bilbo Baggins#5347 The Shire, Middle Earth#Thief#(404)303-1221#Numba1Theif@hobbithole.hol#home#257295.87#7/17/1883#Gandalf
+s#Timba Took-Brandybuck#2214 Sherwood Circle Lafayette, LA 70506#All Terrain Vehicle Racer#(337)275-7161#TimbaTook-Brandybuck@rhyta.com#233 Floor 2#342388.24#7/28/2003#Carl Snachez
+s#Jasmine Clayhanger#4476 Henery Street Wichita, KS 67202#Reactor Engineer#(316)869-277240#JasmineClayhanger@jourrapide.com#328 Floor 4#34645.46#03/21/1968#Paul Donnor
+s#Samwise Gamjee#3423 The Shire, Middle Earth#Assistant#(521)893-4864#SmeagulH8r@hobbits.hhl#Garden#2835.67#05/2/1907#Frodo Baggins
+f#Frodo Baggins#5347 The Shire, Middle Earth#(313)412-6340#Nmba1RngBearer@fellowship.tri#Dark Caves#158257.35#11/21/1996#Ring Bearer#12am to 12pm
+f#Ranugad Goold#4352 Chicago Avenue Orange Cove, CA 93646#(559)626-3355#RanugadGoold@dayrep.com#142 Floor 1#12546.35#03/20/1955#Chemical Processor#3pm to 7pm
+f#Grimalda Whitfoot#401 Granville Lane Newark, NJ 07102#(973)456-8119#GrimaldaWhitfoot@dayrep.com#623 Floor 6#13263.42#9/13/2011#Telescope Repairer#Noon to 5pm
+f#Belinda Noakes#450 Morningview Lane Corydon, IA 50060#(641)870-9905#BelindaNoakes@rhyta.com#427 Floor 4#142512.14#1/4/1983#Electric Motor Rewinder#9pm to 3am
+f#Maura Hogpen#2026 Gateway Avenue Anaheim, CA 92801#(661)916-4813#MauraHogpen@dayrep.com#272 Floor 2#45780.44#08/16/2006#Electromedical Equipment Technician#7am to 5pm
+
+
+The entire database organised by name
+
+Faculty
+	name: Belinda Noakes
+	address: 450 Morningview Lane Corydon, IA 50060
+	phone number: (641)870-9905
+	e-mail address: BelindaNoakes@rhyta.com
+	office: 427 Floor 4
+	salary: 142512.14
+	hiring date: January 4, 1983
+	title: Electric Motor Rewinder
+	office hours: 9pm to 3am
+
+Undergraduate
+	name: Berry Applesome
+	address: 3141 Pie Street Baked, PI
+	phone number: (314)159-2653
+	e-mail address: yummypie@pielover.pie
+	birth date: March 14, 1592
+	status: freshman
+
+Staff
+	name: Bilbo Baggins
+	address: 5347 The Shire, Middle Earth
+	title: Thief
+	phone number: (404)303-1221
+	e-mail address: Numba1Theif@hobbithole.hol
+	office: home
+	salary: 257295.87
+	hiring date: July 17, 1883
+	supervisor name: Gandalf
+
+Undergraduate
+	name: Bobby Bob
+	address: 1234 Sesame Street Flint, MI
+	phone number: (248)459-1140
+	e-mail address: mosl8748@kettering.edu
+	birth date: November 14, 1995
+	status: freshman
+
+Staff
+	name: Caradoc Banks
+	address: 1072 Mount Street Saginaw, MI 48601
+	title: Songwriter
+	phone number: (989)533-0201
+	e-mail address: CaradocBanks@teleworm.us
+	office: 120 Floor 1
+	salary: 86324.32
+	hiring date: December 12, 1975
+	supervisor name: Carol Brown
+
+Graduate
+	name: Ellen B. Simmons
+	address: 3891 Kenwood Place Tamarac, FL 33309
+	birth date: September 6, 1963
+	phone number: (954)543-8950
+	e-mail address: EllenBSimmons@rhyta.com
+	status: master
+	assistantship type: research
+
+Graduate
+	name: Fayme Champagne
+	address: 1514 Blue Spruce Lane Baltimore, MD 21212
+	birth date: September 30, 1974
+	phone number: (410)323-6884
+	e-mail address: FaymeChampagne@dayrep.comm
+	status: doctoral
+	assistantship type: teaching
+
+Faculty
+	name: Frodo Baggins
+	address: 5347 The Shire, Middle Earth
+	phone number: (313)412-6340
+	e-mail address: Nmba1RngBearer@fellowship.tri
+	office: Dark Caves
+	salary: 158257.35
+	hiring date: November 21, 1996
+	title: Ring Bearer
+	office hours: 12am to 12pm
+
+Undergraduate
+	name: George A. Bejarano
+	address: 4067 Candlelight Drive Alvin, TX 77511
+	phone number: (281)393-7753
+	e-mail address: GeorgeABejarano@teleworm.us
+	birth date: October 3, 1947
+	status: sophomore
+
+Faculty
+	name: Grimalda Whitfoot
+	address: 401 Granville Lane Newark, NJ 07102
+	phone number: (973)456-8119
+	e-mail address: GrimaldaWhitfoot@dayrep.com
+	office: 623 Floor 6
+	salary: 13263.42
+	hiring date: September 13, 2011
+	title: Telescope Repairer
+	office hours: Noon to 5pm
+
+Staff
+	name: Jasmine Clayhanger
+	address: 4476 Henery Street Wichita, KS 67202
+	title: Reactor Engineer
+	phone number: (316)869-277240
+	e-mail address: JasmineClayhanger@jourrapide.com
+	office: 328 Floor 4
+	salary: 34645.46
+	hiring date: March 21, 1968
+	supervisor name: Paul Donnor
+
+Graduate
+	name: Kathleen S. Barton
+	address: 8264 Blair Court Rockville, MO 64780
+	birth date: January 23, 1961
+	phone number: (660)598-36150
+	e-mail address: KathleenSBarton@jourrapide.com
+	status: master
+	assistantship type: teaching
+
+Faculty
+	name: Maura Hogpen
+	address: 2026 Gateway Avenue Anaheim, CA 92801
+	phone number: (661)916-4813
+	e-mail address: MauraHogpen@dayrep.com
+	office: 272 Floor 2
+	salary: 45780.44
+	hiring date: August 16, 2006
+	title: Electromedical Equipment Technician
+	office hours: 7am to 5pm
+
+Undergraduate
+	name: Max Phro Vesel
+	address: 8341 Trollston Ave. Kalamazo, MI
+	phone number: (724)184-8357
+	e-mail address: masdic8@msu.com
+	birth date: March 21, 1887
+	status: senior
+
+Faculty
+	name: Ranugad Goold
+	address: 4352 Chicago Avenue Orange Cove, CA 93646
+	phone number: (559)626-3355
+	e-mail address: RanugadGoold@dayrep.com
+	office: 142 Floor 1
+	salary: 12546.35
+	hiring date: March 20, 1955
+	title: Chemical Processor
+	office hours: 3pm to 7pm
+
+Undergraduate
+	name: Rich Stone Stroboleski
+	address: 5298 Holly Road Fenton, MI
+	phone number: (313)412-6340
+	e-mail address: masdic8@msu.com
+	birth date: March 21, 1887
+	status: junior
+
+Graduate
+	name: Rients Breijer
+	address: 3302 Melrose Street Spokane Valley, WA 99206
+	birth date: April 26, 1988
+	phone number: (509)893-9410
+	e-mail address: RientsBreijer@jourrapide.com
+	status: doctoral
+	assistantship type: research
+
+Staff
+	name: Samwise Gamjee
+	address: 3423 The Shire, Middle Earth
+	title: Assistant
+	phone number: (521)893-4864
+	e-mail address: SmeagulH8r@hobbits.hhl
+	office: Garden
+	salary: 2835.67
+	hiring date: May 2, 1907
+	supervisor name: Frodo Baggins
+
+Staff
+	name: Timba Took-Brandybuck
+	address: 2214 Sherwood Circle Lafayette, LA 70506
+	title: All Terrain Vehicle Racer
+	phone number: (337)275-7161
+	e-mail address: TimbaTook-Brandybuck@rhyta.com
+	office: 233 Floor 2
+	salary: 342388.24
+	hiring date: July 28, 2003
+	supervisor name: Carl Snachez
+
+Graduate
+	name: Vivian C. Lusk
+	address: 2591 Fulton Street Smithville, WV 26178I
+	birth date: March 8, 1937
+	phone number: (304)477-9395
+	e-mail address: VivianCLusk@rhyta.com
+	status: doctoral
+	assistantship type: teaching
+
+
+The staff organised by hire date(oldest first)
+
+Staff
+	name: Bilbo Baggins
+	address: 5347 The Shire, Middle Earth
+	title: Thief
+	phone number: (404)303-1221
+	e-mail address: Numba1Theif@hobbithole.hol
+	office: home
+	salary: 257295.87
+	hiring date: July 17, 1883
+	supervisor name: Gandalf
+
+Staff
+	name: Samwise Gamjee
+	address: 3423 The Shire, Middle Earth
+	title: Assistant
+	phone number: (521)893-4864
+	e-mail address: SmeagulH8r@hobbits.hhl
+	office: Garden
+	salary: 2835.67
+	hiring date: May 2, 1907
+	supervisor name: Frodo Baggins
+
+Staff
+	name: Jasmine Clayhanger
+	address: 4476 Henery Street Wichita, KS 67202
+	title: Reactor Engineer
+	phone number: (316)869-277240
+	e-mail address: JasmineClayhanger@jourrapide.com
+	office: 328 Floor 4
+	salary: 34645.46
+	hiring date: March 21, 1968
+	supervisor name: Paul Donnor
+
+Staff
+	name: Caradoc Banks
+	address: 1072 Mount Street Saginaw, MI 48601
+	title: Songwriter
+	phone number: (989)533-0201
+	e-mail address: CaradocBanks@teleworm.us
+	office: 120 Floor 1
+	salary: 86324.32
+	hiring date: December 12, 1975
+	supervisor name: Carol Brown
+
+Staff
+	name: Timba Took-Brandybuck
+	address: 2214 Sherwood Circle Lafayette, LA 70506
+	title: All Terrain Vehicle Racer
+	phone number: (337)275-7161
+	e-mail address: TimbaTook-Brandybuck@rhyta.com
+	office: 233 Floor 2
+	salary: 342388.24
+	hiring date: July 28, 2003
+	supervisor name: Carl Snachez
+
+
+The employees organised by salary(greatest first)
+
+Staff
+	name: Timba Took-Brandybuck
+	address: 2214 Sherwood Circle Lafayette, LA 70506
+	title: All Terrain Vehicle Racer
+	phone number: (337)275-7161
+	e-mail address: TimbaTook-Brandybuck@rhyta.com
+	office: 233 Floor 2
+	salary: 342388.24
+	hiring date: July 28, 2003
+	supervisor name: Carl Snachez
+
+Staff
+	name: Bilbo Baggins
+	address: 5347 The Shire, Middle Earth
+	title: Thief
+	phone number: (404)303-1221
+	e-mail address: Numba1Theif@hobbithole.hol
+	office: home
+	salary: 257295.87
+	hiring date: July 17, 1883
+	supervisor name: Gandalf
+
+Faculty
+	name: Frodo Baggins
+	address: 5347 The Shire, Middle Earth
+	phone number: (313)412-6340
+	e-mail address: Nmba1RngBearer@fellowship.tri
+	office: Dark Caves
+	salary: 158257.35
+	hiring date: November 21, 1996
+	title: Ring Bearer
+	office hours: 12am to 12pm
+
+Faculty
+	name: Belinda Noakes
+	address: 450 Morningview Lane Corydon, IA 50060
+	phone number: (641)870-9905
+	e-mail address: BelindaNoakes@rhyta.com
+	office: 427 Floor 4
+	salary: 142512.14
+	hiring date: January 4, 1983
+	title: Electric Motor Rewinder
+	office hours: 9pm to 3am
+
+Staff
+	name: Caradoc Banks
+	address: 1072 Mount Street Saginaw, MI 48601
+	title: Songwriter
+	phone number: (989)533-0201
+	e-mail address: CaradocBanks@teleworm.us
+	office: 120 Floor 1
+	salary: 86324.32
+	hiring date: December 12, 1975
+	supervisor name: Carol Brown
+
+Faculty
+	name: Maura Hogpen
+	address: 2026 Gateway Avenue Anaheim, CA 92801
+	phone number: (661)916-4813
+	e-mail address: MauraHogpen@dayrep.com
+	office: 272 Floor 2
+	salary: 45780.44
+	hiring date: August 16, 2006
+	title: Electromedical Equipment Technician
+	office hours: 7am to 5pm
+
+Staff
+	name: Jasmine Clayhanger
+	address: 4476 Henery Street Wichita, KS 67202
+	title: Reactor Engineer
+	phone number: (316)869-277240
+	e-mail address: JasmineClayhanger@jourrapide.com
+	office: 328 Floor 4
+	salary: 34645.46
+	hiring date: March 21, 1968
+	supervisor name: Paul Donnor
+
+Faculty
+	name: Grimalda Whitfoot
+	address: 401 Granville Lane Newark, NJ 07102
+	phone number: (973)456-8119
+	e-mail address: GrimaldaWhitfoot@dayrep.com
+	office: 623 Floor 6
+	salary: 13263.42
+	hiring date: September 13, 2011
+	title: Telescope Repairer
+	office hours: Noon to 5pm
+
+Faculty
+	name: Ranugad Goold
+	address: 4352 Chicago Avenue Orange Cove, CA 93646
+	phone number: (559)626-3355
+	e-mail address: RanugadGoold@dayrep.com
+	office: 142 Floor 1
+	salary: 12546.35
+	hiring date: March 20, 1955
+	title: Chemical Processor
+	office hours: 3pm to 7pm
+
+Staff
+	name: Samwise Gamjee
+	address: 3423 The Shire, Middle Earth
+	title: Assistant
+	phone number: (521)893-4864
+	e-mail address: SmeagulH8r@hobbits.hhl
+	office: Garden
+	salary: 2835.67
+	hiring date: May 2, 1907
+	supervisor name: Frodo Baggins
+
+
+The students organised by address
+
+Undergraduate
+	name: Bobby Bob
+	address: 1234 Sesame Street Flint, MI
+	phone number: (248)459-1140
+	e-mail address: mosl8748@kettering.edu
+	birth date: November 14, 1995
+	status: freshman
+
+Graduate
+	name: Fayme Champagne
+	address: 1514 Blue Spruce Lane Baltimore, MD 21212
+	birth date: September 30, 1974
+	phone number: (410)323-6884
+	e-mail address: FaymeChampagne@dayrep.comm
+	status: doctoral
+	assistantship type: teaching
+
+Graduate
+	name: Vivian C. Lusk
+	address: 2591 Fulton Street Smithville, WV 26178I
+	birth date: March 8, 1937
+	phone number: (304)477-9395
+	e-mail address: VivianCLusk@rhyta.com
+	status: doctoral
+	assistantship type: teaching
+
+Undergraduate
+	name: Berry Applesome
+	address: 3141 Pie Street Baked, PI
+	phone number: (314)159-2653
+	e-mail address: yummypie@pielover.pie
+	birth date: March 14, 1592
+	status: freshman
+
+Graduate
+	name: Rients Breijer
+	address: 3302 Melrose Street Spokane Valley, WA 99206
+	birth date: April 26, 1988
+	phone number: (509)893-9410
+	e-mail address: RientsBreijer@jourrapide.com
+	status: doctoral
+	assistantship type: research
+
+Graduate
+	name: Ellen B. Simmons
+	address: 3891 Kenwood Place Tamarac, FL 33309
+	birth date: September 6, 1963
+	phone number: (954)543-8950
+	e-mail address: EllenBSimmons@rhyta.com
+	status: master
+	assistantship type: research
+
+Undergraduate
+	name: George A. Bejarano
+	address: 4067 Candlelight Drive Alvin, TX 77511
+	phone number: (281)393-7753
+	e-mail address: GeorgeABejarano@teleworm.us
+	birth date: October 3, 1947
+	status: sophomore
+
+Undergraduate
+	name: Rich Stone Stroboleski
+	address: 5298 Holly Road Fenton, MI
+	phone number: (313)412-6340
+	e-mail address: masdic8@msu.com
+	birth date: March 21, 1887
+	status: junior
+
+Graduate
+	name: Kathleen S. Barton
+	address: 8264 Blair Court Rockville, MO 64780
+	birth date: January 23, 1961
+	phone number: (660)598-36150
+	e-mail address: KathleenSBarton@jourrapide.com
+	status: master
+	assistantship type: teaching
+
+Undergraduate
+	name: Max Phro Vesel
+	address: 8341 Trollston Ave. Kalamazo, MI
+	phone number: (724)184-8357
+	e-mail address: masdic8@msu.com
+	birth date: March 21, 1887
+	status: senior
+

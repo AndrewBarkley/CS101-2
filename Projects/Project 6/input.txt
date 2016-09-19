@@ -1,24 +1,20 @@
-u#Bobby Bob#1234 Sesame Street Flint, MI#(248)459-1140#mosl8748@kettering.edu#11/14/1997#f
-u#Rich Stone Stroboleski#52984 Holly Road Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
-
-u#Max Phro Vesel#314159 Pie Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#s
-u#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#r
-u#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#s
-
-g#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
-g#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
-g#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
-g#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
-g#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
-
-s#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
-s#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
-s#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
-s#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
-s#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
-
-f#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
-f#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
-f#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
-f#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
-f#Dick Stone Stroboleski#52984 Sesame Street Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
+u#Bobby Bob#1234 Sesame Street Flint, MI#(248)459-1140#mosl8748@kettering.edu#11/14/1995#f
+u#Rich Stone Stroboleski#5298 Holly Road Fenton, MI#(313)412-6340#masdic8@msu.com#03/21/1887#j
+u#Max Phro Vesel#8341 Trollston Ave. Kalamazo, MI#(724)184-8357#masdic8@msu.com#03/21/1887#r
+u#Berry Applesome#3141 Pie Street Baked, PI#(314)159-2653#yummypie@pielover.pie#03/14/1592#f
+u#George A. Bejarano#4067 Candlelight Drive Alvin, TX 77511#(281)393-7753#GeorgeABejarano@teleworm.us#10/03/1947#s
+g#Vivian C. Lusk#2591 Fulton Street Smithville, WV 26178I#3/8/1937#(304)477-9395#VivianCLusk@rhyta.com#d#t
+g#Ellen B. Simmons#3891 Kenwood Place Tamarac, FL 33309#09/6/1963#(954)543-8950#EllenBSimmons@rhyta.com#m#r
+g#Kathleen S. Barton#8264 Blair Court Rockville, MO 64780#1/23/1961#(660)598-36150#KathleenSBarton@jourrapide.com#m#t
+g#Rients Breijer#3302 Melrose Street Spokane Valley, WA 99206#04/26/1988#(509)893-9410#RientsBreijer@jourrapide.com#d#r
+g#Fayme Champagne#1514 Blue Spruce Lane Baltimore, MD 21212#9/30/1974#(410)323-6884#FaymeChampagne@dayrep.comm#d#t
+s#Caradoc Banks#1072 Mount Street Saginaw, MI 48601#Songwriter#(989)533-0201#CaradocBanks@teleworm.us#120 Floor 1#86324.32#12/12/1975#Carol Brown
+s#Bilbo Baggins#5347 The Shire, Middle Earth#Thief#(404)303-1221#Numba1Theif@hobbithole.hol#home#257295.87#7/17/1883#Gandalf
+s#Timba Took-Brandybuck#2214 Sherwood Circle Lafayette, LA 70506#All Terrain Vehicle Racer#(337)275-7161#TimbaTook-Brandybuck@rhyta.com#233 Floor 2#342388.24#7/28/2003#Carl Snachez
+s#Jasmine Clayhanger#4476 Henery Street Wichita, KS 67202#Reactor Engineer#(316)869-277240#JasmineClayhanger@jourrapide.com#328 Floor 4#34645.46#03/21/1968#Paul Donnor
+s#Samwise Gamjee#3423 The Shire, Middle Earth#Assistant#(521)893-4864#SmeagulH8r@hobbits.hhl#Garden#2835.67#05/2/1907#Frodo Baggins
+f#Frodo Baggins#5347 The Shire, Middle Earth#(313)412-6340#Nmba1RngBearer@fellowship.tri#Dark Caves#158257.35#11/21/1996#Ring Bearer#12am to 12pm
+f#Ranugad Goold#4352 Chicago Avenue Orange Cove, CA 93646#(559)626-3355#RanugadGoold@dayrep.com#142 Floor 1#12546.35#03/20/1955#Chemical Processor#3pm to 7pm
+f#Grimalda Whitfoot#401 Granville Lane Newark, NJ 07102#(973)456-8119#GrimaldaWhitfoot@dayrep.com#623 Floor 6#13263.42#9/13/2011#Telescope Repairer#Noon to 5pm
+f#Belinda Noakes#450 Morningview Lane Corydon, IA 50060#(641)870-9905#BelindaNoakes@rhyta.com#427 Floor 4#142512.14#1/4/1983#Electric Motor Rewinder#9pm to 3am
+f#Maura Hogpen#2026 Gateway Avenue Anaheim, CA 92801#(661)916-4813#MauraHogpen@dayrep.com#272 Floor 2#45780.44#08/16/2006#Electromedical Equipment Technician#7am to 5pm
