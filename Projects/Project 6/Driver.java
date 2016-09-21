@@ -41,82 +41,86 @@ public class Driver
             length++
             
       //PRINTING
-      out.println("Zachary Mosley\n" +
+      print <- "Zachary Mosley\n" +
                   "CS101-02\n" +
-                  "Project 6\n")
-      out.println("The following is an echo of the input\n")
-      out.println(echo + "\n")
-      out.println("The entire database organised by name\n")
+                  "Project 6\n"
+      print <- "The following is an echo of the input\n"
+      print <- echo + "\n"
+      
+      print <- "The entire database organised by name\n"
       int bottom <- length
       boolean sorted <- false
       while(!sorted)
-         sorted <- true;
+         sorted <- true
          for(int pass <- 0; pass < bottom; pass++)
-            for(int i <- 0 i < length i++)
-               if(people[i].getName().compareTo(people[i + 1].getName()) == 1)
+            for(int i <- 0; i < length-pass; i++)
+               if(people[i].getName().compareToIgnoreCase(people[i + 1].getName()) >= 1)
                   Person temp <- people[i]
                   people[i] <- people[i+1]
                   people[i+1] <- temp
                   sorted <- false
             bottom--
-      for(int i=0; i<=length; i++)
+      for(int i <- 0; i<=length; i++)
          if(people[i] != null)
-            out.println(people[i])
-            out.println()
-      out.println("\nThe staff organised by hire date(oldest first)\n")
+            print <- people[i]
+            print <- "\n"
+
+      print <- "\nThe staff organised by hire date(oldest first)\n"
       bottom <- length
       sorted <- false
       while(!sorted)
-         sorted <- true;
+         sorted <- true
          for(int pass <- 0; pass < bottom; pass++)
-            for(int i <- 0; i < length; i++)
-               if(people[i].getDate().compareTo(people[i + 1].getDate()) == -1)
+            for(int i <- 0; i < length-pass; i++)
+               if(people[i].getDate().compareTo(people[i + 1].getDate()) <= -1)
                   Person temp <- people[i]
                   people[i] <- people[i+1]
                   people[i+1] <- temp
                   sorted <- false
             bottom--
-      for(int i=0; i<=length; i++)
+      for(int i <- 0; i<=length; i++)
          if(people[i] != null)
             if(people[i].getType() == 3)
-               out.println(people[i])
-               out.println()
-      out.println("\nThe employees organised by salary(greatest first)\n")
+               print <- people[i]
+               print <- "\n"
+               
+      print <- "\nThe employees organised by salary(smallest first)\n"
       bottom <- length
       sorted <- false
-      while(!sorted)//watch for errors
-         sorted <- true;
+      while(!sorted)
+         sorted <- true
          for(int pass <- 0; pass < bottom; pass++)
-            for(int i <- 0; i < length; i++)
+            for(int i <- 0; i < length-pass; i++)
                if(people[i].getSalary() >= people[i + 1].getSalary())
                   Person temp <- people[i]
                   people[i] <- people[i+1]
                   people[i+1] <- temp
                   sorted <- false
             bottom--
-      for(int i=0; i<=length; i++)
+      for(int i <- 0; i<=length; i++)
          if(people[i] != null)
             if(people[i].getType() == 3 || people[i].getType() == 4)
-               out.println(people[i])
-               out.println()
-      out.println("\nThe students organised by address\n")
-      //sort by name
+               print <- people[i]
+               print <- "\n"
+               
+      print <- "\nThe graduate students organised by address\n"
       bottom <- length
       sorted <- false
       while(!sorted)
-         sorted <- true;
+         sorted <- true
          for(int pass <- 0; pass < bottom; pass++)
-            for(int i <- 0; i < length; i++)
-               if(people[i].getAddress().compareTo(people[i + 1].getAddress()) == 1)
+            for(int i <- 0; i < length-pass; i++)
+               if(people[i].getAddress().compareTo(people[i + 1].getAddress()) >= 1)
                   Person temp <- people[i]
                   people[i] <- people[i+1]
                   people[i+1] <- temp
                   sorted <- false
             bottom--
-      for(int i=0; i<=length; i++)
+      for(int i <- 0; i<=length; i++)
          if(people[i] != null)
-            out.println(people[i])
-            out.println()
+            if(people[i].getType() == 2)
+               print <- people[i]
+               print <- "\n"
    -----------------------------------------------------------------------
 
                      main Data Table
@@ -229,7 +233,7 @@ public class Driver
       
       out.println("\nThe staff organised by hire date(oldest first)\n");
       
-      //sort by date          dates are doubled
+      //sort by date
       bottom = length;
       sorted = false;
       while(!sorted)
@@ -263,9 +267,9 @@ public class Driver
          }
       }
       
-      out.println("\nThe employees organised by salary(greatest first)\n");
+      out.println("\nThe employees organised by salary(smallest first)\n");
       
-      //sort by salary         dates are doubled
+      //sort by salary
       bottom = length;
       sorted = false;
       while(!sorted)
@@ -275,7 +279,7 @@ public class Driver
          {
             for(int i = 0; i < length-pass; i++)
             {
-               if(people[i].getSalary() <= people[i + 1].getSalary())
+               if(people[i].getSalary() >= people[i + 1].getSalary())
                {
                   Person temp = people[i];
                   people[i] = people[i+1];
@@ -299,9 +303,9 @@ public class Driver
          }
       }
    
-      out.println("\nThe students organised by address\n");
+      out.println("\nThe graduate students organised by address\n");
       
-      //sort by address dates doubled
+      //sort by address
       bottom = length;
       sorted = false;
       while(!sorted)
@@ -327,7 +331,7 @@ public class Driver
       {
          if(people[i] != null)
          {
-            if(people[i].getType() == 1 || people[i].getType() == 2)
+            if(people[i].getType() == 2)
             {
                out.println(people[i]);
                out.println();

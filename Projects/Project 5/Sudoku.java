@@ -12,6 +12,7 @@ import java.io.*;
    boolean [][] editable = new boolean [9][9]
    boolean full
    int trueCount
+   int [] errorType = new int [9]
    -----------------------------------------------------------------------
 
                      Class Data Table
@@ -21,6 +22,7 @@ import java.io.*;
    boolean [][] editable         boolean array to keep track of which values are editable
    boolean full                  keeps track if the puzzle is full
    int trueCount                 keeps track of th number of possible values for one cell
+   int [] errorType              keeps check of where the error occurs
 
    */
 
@@ -30,6 +32,7 @@ public class Sudoku
    private boolean [][] editable = new boolean [9][9];
    private boolean full;
    private int trueCount;
+   private int [] errorType = new int [9];
    
    /*
                      Sudoku constructor Algorithm
@@ -59,11 +62,21 @@ public class Sudoku
    /*
                      addInitial Algorithm
    -----------------------------------------------------------------------
-   if(0<row<10 && 0<coloumn<10 && 0<=value<10)
-      values[row-1][coloumn-1] <- value
-      editable[row-1][coloumn-1] <- false
-   else
-      print <- ERROR message
+      public void addInitial(int, int, int)
+      boolean [] possible <- getAllowedValues(row,coloumn)
+      if(0<row<10 && 0<coloumn<10 && 0<=value<10)
+         if(possible[value-1])
+            values[row-1][coloumn-1] <- value
+            editable[row-1][coloumn-1] <- false
+         else
+            if(errorType[value-1] == 1)
+               print <- error type 1
+            else if(errorType[value-1] == 2)
+               print <- error type 2
+            else
+               print <- error type 3
+      else
+         print <- error
    -----------------------------------------------------------------------
 
                      addInitial Data Table
@@ -75,6 +88,7 @@ public class Sudoku
    values[][]                    int array to keep track of Sudoku values
    editable[][]                  boolean array to keep track of which values are editable
    possible[][]                  boolean array to keep track of which values are possible
+   errorType[]                   int array to keep track of where a error occurs
    
    */
    public void addInitial(int row, int coloumn, int value)
@@ -88,7 +102,14 @@ public class Sudoku
             editable[row-1][coloumn-1] = false;
          }
          else
-            System.out.println("ERROR 707: New value conflicts with and another cell");
+         {
+            if(errorType[value-1] == 1)
+               System.out.println("ERROR 707: New value conflicts with an another cell in the row");
+            else if(errorType[value-1] == 2)
+               System.out.println("ERROR 707: New value conflicts with an another cell in the coloumn");
+            else
+               System.out.println("ERROR 707: New value conflicts with an another cell in the box");
+         }
          
       }
       else
@@ -98,9 +119,18 @@ public class Sudoku
    /*
                      addGuess Algorithm
    -----------------------------------------------------------------------
+   boolean [] possible <- getAllowedValues(row,coloumn)
    if(editable[row-1][coloumn-1])
-      if(0<row<10 && 0<coloumn<10 && 0<value<10)
-         values[row-1][coloumn-1] <- value
+      if(0<row<10 && 0<coloumn<10 && 0<=value<10)
+         if(possible[value-1])
+            values[row-1][coloumn-1] <- value
+         else
+            if(errorType[value-1] == 1)
+               print <- ERROR message type 1
+            else if(errorType[value-1] == 2)
+               print <- ERROR message type 2
+            else
+               print <- ERROR message type 3
       else
          print <- ERROR message
    else
@@ -116,6 +146,7 @@ public class Sudoku
    values[][]                    int array to keep track of Sudoku values
    editable[][]                  boolean array to keep track of which values are editable
    possible[][]                  boolean array to keep track of which values are possible
+   errorType[]                   int array to keep track of where the error occurs
 
    */
    public void addGuess(int row, int coloumn, int value)
@@ -123,12 +154,19 @@ public class Sudoku
       boolean [] possible = getAllowedValues(row,coloumn);
       if(editable[row-1][coloumn-1])
       {
-         if(0<row && row<10 && 0<coloumn && coloumn<10 && 0<value && value<10)
+         if(0<row && row<10 && 0<coloumn && coloumn<10 && 0<=value && value<10)
          {
             if(possible[value-1])
                values[row-1][coloumn-1] = value;
             else
-               System.out.println("ERROR 707: New value conflicts with and another cell");
+            {
+               if(errorType[value-1] == 1)
+                  System.out.println("ERROR 707: New value conflicts with an another cell in the row");
+               else if(errorType[value-1] == 2)
+                  System.out.println("ERROR 707: New value conflicts with an another cell in the coloumn");
+               else
+                  System.out.println("ERROR 707: New value conflicts with an another cell in the box");
+            }
          }
          else
             System.out.println("ERROR 323: One or more value(s) aren't within bounds");
@@ -261,6 +299,7 @@ public class Sudoku
             {
                possible[values[row][c]-1] = false;
                trueCount--;
+               errorType[values[row][c]-1] = 1;
             }
          }
       }
@@ -274,6 +313,7 @@ public class Sudoku
             {
                possible[values[r][coloumn]-1] = false;
                trueCount--;
+               errorType[values[r][coloumn]-1] = 2;
             }
          }
       }
@@ -334,6 +374,7 @@ public class Sudoku
                   {
                      possible[values[r][c]-1] = false;
                      trueCount--;
+                     errorType[values[r][c]-1] = 3;
                   }
                }
             }
