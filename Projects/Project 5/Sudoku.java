@@ -19,9 +19,9 @@ import java.io.*;
    Variable or Constant          Purpose
    ____________________          _________________________________________
    int [][] values               int array to keep track of Sudoku values
-   boolean [][] editable         boolean array to keep track of which values are editable
+   boolean [][] editable         array to keep track of which values are editable
    boolean full                  keeps track if the puzzle is full
-   int trueCount                 keeps track of th number of possible values for one cell
+   int trueCount                 keeps track of the count of possible values for a cell
    int [] errorType              keeps check of where the error occurs
 
    */
@@ -45,7 +45,7 @@ public class Sudoku
                      Sudoku constructor Data Table
    Variable or Constant          Purpose
    ____________________          _________________________________________
-   boolean [][] editable         boolean array to keep track of which values are editable
+   boolean [][] editable         array to keep track of which values are editable
 
    */
    public Sudoku()
@@ -86,8 +86,8 @@ public class Sudoku
    int coloumn                   determines what coloumn to change
    int value                     determines what to change the cell to
    values[][]                    int array to keep track of Sudoku values
-   editable[][]                  boolean array to keep track of which values are editable
-   possible[][]                  boolean array to keep track of which values are possible
+   boolean editable[][]          array to keep track of which values are editable
+   boolean possible[][]          array to keep track of which values are possible
    errorType[]                   int array to keep track of where a error occurs
    
    */
@@ -104,11 +104,11 @@ public class Sudoku
          else
          {
             if(errorType[value-1] == 1)
-               System.out.println("ERROR 707: New value conflicts with an another cell in the row");
+               System.out.println("ERROR 707: Value conflicts with a cell in the row");
             else if(errorType[value-1] == 2)
-               System.out.println("ERROR 707: New value conflicts with an another cell in the coloumn");
+               System.out.println("ERROR 707: Value conflicts with a cell in the coloumn");
             else
-               System.out.println("ERROR 707: New value conflicts with an another cell in the box");
+               System.out.println("ERROR 707: Value conflicts with a cell in the box");
          }
          
       }
@@ -144,8 +144,8 @@ public class Sudoku
    int coloumn                   determines what coloumn to change
    int value                     determines what to change the cell to
    values[][]                    int array to keep track of Sudoku values
-   editable[][]                  boolean array to keep track of which values are editable
-   possible[][]                  boolean array to keep track of which values are possible
+   boolean editable[][]          array to keep track of which values are editable
+   boolean possible[][]          array to keep track of which values are possible
    errorType[]                   int array to keep track of where the error occurs
 
    */
@@ -161,11 +161,11 @@ public class Sudoku
             else
             {
                if(errorType[value-1] == 1)
-                  System.out.println("ERROR 707: New value conflicts with an another cell in the row");
+                  System.out.println("ERROR 707: Value conflicts with a cell in the row");
                else if(errorType[value-1] == 2)
-                  System.out.println("ERROR 707: New value conflicts with an another cell in the coloumn");
+                  System.out.println("ERROR 707: Value conflicts with a cell in the coloumn");
                else
-                  System.out.println("ERROR 707: New value conflicts with an another cell in the box");
+                  System.out.println("ERROR 707: Value conflicts with a cell in the box");
             }
          }
          else
@@ -273,7 +273,7 @@ public class Sudoku
    int trueCount                 counts the number of possible values for a cell
    values[][]                    int array to keep track of Sudoku values
    possible[][]                  array to keep track of the cell's possible values
-   editable[][]                  boolean array to keep track of which values are editable
+   editable[][]                  array to keep track of which values are editable
    String output                 String verion of possible[][]
 
    */
@@ -472,7 +472,7 @@ public class Sudoku
    Variable or Constant          Purpose
    ____________________          _________________________________________
    values[][]                    int array to keep track of Sudoku values
-   editable[][]                  boolean array to keep track of which values are editable
+   editable[][]                  array to keep track of which values are editable
 
    */
    public void reset()
